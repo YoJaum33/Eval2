@@ -108,7 +108,7 @@ if (isset($_POST['artists_nom'])) {
         $resultat = $prepare->rowCount(); // rowCount() nécessite PDO::MYSQL_ATTR_FOUND_ROWS => true
 
         if ($resultat == 1) {
-            echo "<p>Le genre a été ajouté à la DB !</p>";
+            echo "<p>L'artiste a été ajouté à la DB !</p>";
                
           }
     } catch (PDOException $e) {
