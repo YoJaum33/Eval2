@@ -13,6 +13,13 @@ include('DBconnect.php');
     <h1>Bienvenue chez Cameron</h1>
 </head>
 <body>
+<div class=Ajouter>
+<a href='genreAjout.php/'style="color:pink"> Ajouter un genre </a> </br>
+<a href='stylesAjout.php/'style="color:green"> Ajouter un style </a> </br>
+<a href='artistsAjout.php/'style="color:yellow"> Ajouter un artiste </a> </br>
+</div>
+
+
 <h2> Les genres </h2>
 <div class='genre'>
 <?php
@@ -37,7 +44,6 @@ include('DBconnect.php');
     echo "<section>";
     echo "<p>" . htmlentities($genre["genre_name"], ENT_QUOTES) . "</p>"; // Ajout du HTML entities pour éviter les failles XSS GET REKT 
     echo ("<a id='mod1' href='genres.php/?id=".htmlentities($genre["genre_id"], ENT_QUOTES)."'> Modifier ce genre </a> <br>");
-    echo ("<a id='mod1' href='genreAjout.php/?id=".htmlentities($genre["genre_id"], ENT_QUOTES)."'> Ajouter un genre </a> <br>");
     echo ("<a id='mod1' href='suppr.php/?id=".htmlentities($genre["genre_id"], ENT_QUOTES)."'> Supprimer ce genre </a> <br>");
     echo "</section>";
   }
@@ -66,7 +72,6 @@ include('DBconnect.php');
     echo "<section>";
     echo "<p>" . htmlentities($styles["style_name"], ENT_QUOTES) . "</p>"; // Ajout du HTML entities pour éviter les failles XSS GET REKT 
     echo ("<a id='mod1' href='styles.php/?id=".htmlentities($styles["style_id"], ENT_QUOTES)."'> Modifier ce style </a> <br>");
-    echo ("<a id='mod1' href='stylesAjout.php/?id=".htmlentities($styles["style_id"], ENT_QUOTES)."'> Ajouter un style </a> <br>");
     echo ("<a id='mod1' href='supprStyle.php/?id=".htmlentities($styles["style_id"], ENT_QUOTES)."'> Supprimer ce style </a> <br>");
     echo "</section>";
   }
@@ -95,13 +100,12 @@ include('DBconnect.php');
     echo "<section>";
     echo "<p>" . htmlentities($artists["artists_nom"], ENT_QUOTES) . "</p>"; // Ajout du HTML entities pour éviter les failles XSS GET REKT 
     echo ("<a id='mod1' href='artists.php/?id=".htmlentities($artists["artists_id"], ENT_QUOTES)."'> Modifier cet artiste </a> <br>");
-    echo ("<a id='mod1' href='artistsAjout.php/?id=".htmlentities($artists["artists_id"], ENT_QUOTES)."'> Ajouter un artiste </a> <br>");
     echo ("<a id='mod1' href='supprArtists.php/?id=".htmlentities($artists["artists_id"], ENT_QUOTES)."'> Supprimer cet artiste </a> <br>");
     echo "</section>";
   }
-
-  
 ?>
+
+
   </div>
 </body>
 </html>
